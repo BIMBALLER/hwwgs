@@ -6,7 +6,7 @@ The website is designed with a clean corporate layout, professional imagery, res
 
 ## 🌐 Live Demo
 
-- **Website:** Add your deployed website URL here.
+- **Website:** https://hwwgs.vercel.app/.
 - **GitHub Repository:** https://github.com/BIMBALLER/hwwgs.
 
 ## ✨ Features
@@ -38,8 +38,8 @@ hwwgs-website/
 ├── index.html
 ├── script.js
 ├── README.md
-└── images/
-    └── hwwgs-logo.jpg
+
+logo.png
 ```
 
 ## 🚀 Getting Started
@@ -47,48 +47,7 @@ hwwgs-website/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
-```
-
-Replace `YOUR_REPOSITORY_URL` with your actual GitHub repository URL.
-
-### 2. Open the project folder
-
-```bash
-cd hwwgs-website
-```
-
-### 3. Check the logo
-
-Place the HWWGS logo inside the `images` folder and name it `hwwgs-logo.jpg`.
-
-If your image has a different filename or extension, update the image paths in `index.html`.
-
-### 4. Run the website
-
-Open `index.html` in your browser.
-
-For a better development experience, use the **Live Server** extension in Visual Studio Code.
-
-## 📧 Contact Form Configuration
-
-The contact form is handled by `script.js`.
-
-Find this line:
-
-```javascript
-const companyEmail = "info@hwwgs.com";
-```
-
-Add the company's official email address:
-
-```javascript
-const companyEmail = "info@hwwgs.com";
-```
-
-Use the verified email address intended to receive enquiries.
-
-**Note:** The current form opens the visitor's default email application with the enquiry details pre-filled. Visitors must send the email themselves. Automatic email delivery, database storage, and automated confirmation replies require a backend or third-party form service.
+git clone https://github.com/BIMBALLER/hwwgs
 
 ## 🎨 Design Highlights
 
@@ -100,7 +59,7 @@ Use the verified email address intended to receive enquiries.
 
 ## 🌍 Deployment
 
-The website can be deployed using:
+The website was deployed using:
 
 - **Vercel**
 - **Netlify**
@@ -123,6 +82,6 @@ This project is a corporate website implementation for HWWGS. Service descriptio
 
 ## 👨‍💻 Developer
 
-Developed as a frontend web development project using HTML, Tailwind CSS, and JavaScript.
+Developed By O.A ABDULMUIZZ a frontend web development project using HTML, Tailwind CSS, and JavaScript.
 
 **Built with a focus on responsive design, accessibility, and user experience.**
