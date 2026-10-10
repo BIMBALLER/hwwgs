@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HWWGS | Consulting, Technology & Real Estate</title>
+  <meta name="description" content="HWWGS provides management consulting, information technology and real estate solutions.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: "#173D8F",
+              cyan: "#10A9C5",
+              green: "#159447",
+              navy: "#101D35",
+              light: "#F4F8FC"
+            }
+          },
+          fontFamily: {
+            sans: ["DM Sans", "sans-serif"],
+            heading: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(
+        90deg,
+        rgba(9, 23, 47, 0.94) 0%,
+        rgba(9, 23, 47, 0.78) 48%,
+        rgba(9, 23, 47, 0.22) 100%
+      );
+    }
+
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 24px 55px rgba(16, 29, 53, 0.12);
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #20B7CF, #54C477);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-label::before {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 3px;
+      background: #159447;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    #mobile-menu[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-700 antialiased">
+
+  <!-- TOP BAR -->
+  <div class="hidden bg-brand-navy text-white md:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-xs lg:px-8">
+      <p class="text-slate-300">
+        Integrated solutions. Sustainable progress.
+      </p>
+
+      <div class="flex items-center gap-6">
+        <a href="#contact" class="transition hover:text-cyan-300">
+          Contact our team
+        </a>
+        <a href="#services" class="transition hover:text-cyan-300">
+          Explore our services
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8">
+
+      <a href="#home" class="flex shrink-0 items-center gap-3" aria-label="HWWGS home">
+        <img
+          src="logo.png"
+          alt="HWWGS logo"
+          class="h-14 w-20 rounded object-contain sm:w-24"
+        >
+
+        <span class="hidden border-l border-slate-200 pl-3 sm:block">
+          <span class="block font-heading text-lg font-extrabold tracking-wide text-brand-navy">
+            HWWGS
+          </span>
+          <span class="block text-[9px] font-semibold uppercase tracking-[.16em] text-slate-500">
+            Worldwide Global Services
+          </span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-7 lg:flex">
+        <a href="#home" class="text-sm font-semibold text-brand-blue">Home</a>
+        <a href="#about" class="text-sm font-medium transition hover:text-brand-green">About Us</a>
+        <a href="#services" class="text-sm font-medium transition hover:text-brand-green">Services</a>
+        <a href="#expertise" class="text-sm font-medium transition hover:text-brand-green">Our Expertise</a>
+        <a href="#contact" class="text-sm font-medium transition hover:text-brand-green">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden rounded-full bg-brand-blue px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-brand-green lg:inline-flex">
+        Let's Talk <span class="ml-2">↗</span>
+      </a>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        class="rounded-lg border border-slate-200 p-2.5 text-brand-navy lg:hidden"
+        aria-label="Open navigation menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+
+    </nav>
+
+    <!-- MOBILE NAVIGATION -->
+    <div id="mobile-menu" hidden class="border-t border-slate-100 bg-white px-5 py-4 lg:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-1">
+        <a href="#home" class="rounded-lg px-4 py-3 font-semibold hover:bg-slate-50">Home</a>
+        <a href="#about" class="rounded-lg px-4 py-3 hover:bg-slate-50">About Us</a>
+        <a href="#services" class="rounded-lg px-4 py-3 hover:bg-slate-50">Services</a>
+        <a href="#expertise" class="rounded-lg px-4 py-3 hover:bg-slate-50">Our Expertise</a>
+        <a href="#contact" class="rounded-lg px-4 py-3 hover:bg-slate-50">Contact</a>
+
+        <a href="#contact" class="mt-2 rounded-xl bg-brand-blue px-5 py-3 text-center font-bold text-white">
+          Start a Conversation ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative isolate flex min-h-[660px] items-center overflow-hidden bg-brand-navy lg:min-h-[740px]">
+
+      <img
+        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=85"
+        alt="Modern commercial buildings"
+        class="absolute inset-0 -z-20 h-full w-full object-cover"
+      >
+
+      <div class="hero-overlay absolute inset-0 -z-10"></div>
+
+      <div class="absolute -right-24 top-20 -z-10 h-80 w-80 rounded-full bg-brand-cyan/20 blur-[100px]"></div>
+      <div class="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-brand-green/20 blur-[100px]"></div>
+
+      <div class="mx-auto grid w-full max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-32">
+
+        <div class="max-w-3xl">
+
+          <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-xs font-semibold tracking-wide text-white backdrop-blur-md sm:text-sm">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            MANAGEMENT · TECHNOLOGY · REAL ESTATE
+          </div>
+
+          <h1 class="text-4xl font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Building better
+            <span class="gradient-text">businesses.</span>
+            <br>
+            Enabling a better future.
+          </h1>
+
+          <p class="mt-7 max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
+            From strategic business guidance to technology-driven solutions and real estate opportunities, HWWGS brings diverse capabilities together to help turn ambition into meaningful progress.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#services" class="inline-flex items-center justify-center rounded-full bg-brand-green px-7 py-4 font-bold text-white shadow-xl transition hover:bg-emerald-600">
+              Discover Our Services <span class="ml-3">↗</span>
+            </a>
+
+            <a href="#about" class="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-7 py-4 font-bold text-white transition hover:bg-white/15">
+              Get to Know Us
+            </a>
+          </div>
+
+          <div class="mt-12 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-slate-300">
+            <span><span class="mr-2 text-emerald-400">✓</span>Strategic thinking</span>
+            <span><span class="mr-2 text-emerald-400">✓</span>Integrated solutions</span>
+            <span><span class="mr-2 text-emerald-400">✓</span>Client-focused approach</span>
+          </div>
+        </div>
+
+        <!-- HERO SERVICE PANEL -->
+        <div class="hidden lg:block">
+          <div class="ml-auto max-w-sm rounded-3xl border border-white/20 bg-white/10 p-7 shadow-2xl backdrop-blur-xl">
+
+            <div class="mb-7 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.2em] text-slate-300">One partner</p>
+                <h2 class="mt-2 text-2xl font-bold text-white">Three core disciplines</h2>
+              </div>
+              <img src="images/hwwgs-logo.jpg" alt="" class="h-14 w-14 rounded-xl bg-white object-contain">
+            </div>
+
+            <a href="#consulting" class="group flex items-center gap-4 border-t border-white/15 py-5">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-400/15 text-xl text-emerald-300">↗</span>
+              <span class="flex-1">
+                <span class="block font-bold text-white">Management Consulting</span>
+                <span class="mt-1 block text-sm text-slate-300">Clarity for business decisions</span>
+              </span>
+              <span class="text-white transition group-hover:translate-x-1">→</span>
+            </a>
+
+            <a href="#technology" class="group flex items-center gap-4 border-t border-white/15 py-5">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cyan-400/15 text-xl text-cyan-300">⌘</span>
+              <span class="flex-1">
+                <span class="block font-bold text-white">Information Technology</span>
+                <span class="mt-1 block text-sm text-slate-300">Solutions for a digital world</span>
+              </span>
+              <span class="text-white transition group-hover:translate-x-1">→</span>
+            </a>
+
+            <a href="#real-estate" class="group flex items-center gap-4 border-t border-white/15 py-5">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-400/15 text-xl text-blue-300">⌂</span>
+              <span class="flex-1">
+                <span class="block font-bold text-white">Real Estate</span>
+                <span class="mt-1 block text-sm text-slate-300">Spaces and property opportunities</span>
+              </span>
+              <span class="text-white transition group-hover:translate-x-1">→</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-brand-green via-brand-cyan to-brand-blue"></div>
+    </section>
+
+    <!-- THREE PILLARS -->
+    <section class="border-b border-slate-100 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-3 sm:gap-5 lg:px-8">
+
+        <div class="flex items-center gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-xl text-brand-green">01</span>
+          <div>
+            <h3 class="font-bold text-brand-navy">Think Strategically</h3>
+            <p class="mt-1 text-sm text-slate-500">Make informed business decisions.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-xl text-brand-cyan">02</span>
+          <div>
+            <h3 class="font-bold text-brand-navy">Embrace Technology</h3>
+            <p class="mt-1 text-sm text-slate-500">Find smarter ways to work.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-xl text-brand-blue">03</span>
+          <div>
+            <h3 class="font-bold text-brand-navy">Create Lasting Value</h3>
+            <p class="mt-1 text-sm text-slate-500">Explore opportunities for growth.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about" class="overflow-hidden bg-brand-light py-24 sm:py-28">
+      <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:px-8">
+
+        <div class="relative">
+          <div class="absolute -left-5 -top-5 h-28 w-28 rounded-tl-[40px] border-l-4 border-t-4 border-brand-green/60"></div>
+
+          <img
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
+            alt="Contemporary professional office"
+            loading="lazy"
+            class="relative z-10 h-[380px] w-full rounded-3xl object-cover shadow-xl sm:h-[480px]"
+          >
+
+          <div class="absolute -bottom-7 -right-2 z-20 max-w-xs rounded-2xl border border-slate-100 bg-white p-6 shadow-xl sm:-right-7">
+            <div class="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-brand-green to-brand-cyan"></div>
+            <p class="font-heading text-lg font-extrabold text-brand-navy">Connected expertise.</p>
+            <p class="mt-1 text-sm leading-6 text-slate-500">Multiple disciplines, working towards meaningful outcomes.</p>
+          </div>
+        </div>
+
+        <div class="pt-5 lg:pt-0">
+          <p class="section-label text-sm font-bold uppercase tracking-[.16em] text-brand-green">About HWWGS</p>
+
+          <h2 class="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
+            A broader perspective.
+            <span class="text-brand-blue">A smarter way forward.</span>
+          </h2>
+
+          <p class="mt-7 leading-8 text-slate-600">
+            HWWGS brings together management consulting, information technology and real estate to address different business and property needs through an integrated approach.
+          </p>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            We believe progress starts with understanding the challenge, identifying practical opportunities and building solutions around the needs of the people and organisations we serve.
+          </p>
+
+          <div class="mt-9 grid gap-6 sm:grid-cols-2">
+            <div class="border-l-2 border-brand-green pl-5">
+              <h3 class="font-bold text-brand-navy">Our Mission</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                To provide practical, client-focused solutions that support informed decisions and sustainable progress.
+              </p>
+            </div>
+
+            <div class="border-l-2 border-brand-cyan pl-5">
+              <h3 class="font-bold text-brand-navy">Our Vision</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                To contribute to a future where businesses and communities can make better use of knowledge, technology and opportunity.
+              </p>
+            </div>
+          </div>
+
+          <a href="#contact" class="mt-9 inline-flex items-center font-bold text-brand-blue transition hover:text-brand-green">
+            Learn more about working with us <span class="ml-3">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-brand-green">What We Do</p>
+          <h2 class="mt-5 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
+            Expertise designed around your goals
+          </h2>
+          <p class="mt-6 leading-8 text-slate-600">
+            Explore our three core service areas and discover how the right expertise can help you address challenges and identify new possibilities.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+
+          <!-- CONSULTING CARD -->
+          <article id="consulting" class="service-card overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="Business professionals collaborating" loading="lazy" class="h-full w-full object-cover transition duration-700 hover:scale-105">
+              <span class="absolute left-5 top-5 rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-green">01 / Strategy</span>
+            </div>
+
+            <div class="p-7 sm:p-8">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-2xl text-brand-green">↗</div>
+              <h3 class="text-2xl font-extrabold text-brand-navy">Management Consulting</h3>
+              <p class="mt-4 leading-7 text-slate-600">Navigate business challenges with structured thinking, practical recommendations and a focus on better decisions.</p>
+
+              <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                <li><span class="mr-2 font-bold text-brand-green">✓</span>Business strategy and planning</li>
+                <li><span class="mr-2 font-bold text-brand-green">✓</span>Process improvement</li>
+                <li><span class="mr-2 font-bold text-brand-green">✓</span>Project and operations management</li>
+                <li><span class="mr-2 font-bold text-brand-green">✓</span>Business performance advisory</li>
+              </ul>
+
+              <a href="#contact" class="mt-8 inline-flex items-center font-bold text-brand-blue hover:text-brand-green">Discuss your business needs <span class="ml-3">→</span></a>
+            </div>
+          </article>
+
+          <!-- IT CARD -->
+          <article id="technology" class="service-card overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85" alt="Technology hardware and digital infrastructure" loading="lazy" class="h-full w-full object-cover transition duration-700 hover:scale-105">
+              <span class="absolute left-5 top-5 rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-blue">02 / Technology</span>
+            </div>
+
+            <div class="p-7 sm:p-8">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-2xl text-brand-cyan">⌘</div>
+              <h3 class="text-2xl font-extrabold text-brand-navy">Information Technology</h3>
+              <p class="mt-4 leading-7 text-slate-600">Explore technology-led approaches that help organisations improve processes, capabilities and digital operations.</p>
+
+              <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                <li><span class="mr-2 font-bold text-brand-cyan">✓</span>Digital transformation advisory</li>
+                <li><span class="mr-2 font-bold text-brand-cyan">✓</span>IT strategy and planning</li>
+                <li><span class="mr-2 font-bold text-brand-cyan">✓</span>Business systems solutions</li>
+                <li><span class="mr-2 font-bold text-brand-cyan">✓</span>Technology evaluation and optimisation</li>
+              </ul>
+
+              <a href="#contact" class="mt-8 inline-flex items-center font-bold text-brand-blue hover:text-brand-green">Explore technology solutions <span class="ml-3">→</span></a>
+            </div>
+          </article>
+
+          <!-- REAL ESTATE CARD -->
+          <article id="real-estate" class="service-card overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm md:col-span-2 xl:col-span-1">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Contemporary property and architecture" loading="lazy" class="h-full w-full object-cover transition duration-700 hover:scale-105">
+              <span class="absolute left-5 top-5 rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-blue">03 / Property</span>
+            </div>
+
+            <div class="p-7 sm:p-8">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl text-brand-blue">⌂</div>
+              <h3 class="text-2xl font-extrabold text-brand-navy">Real Estate</h3>
+              <p class="mt-4 leading-7 text-slate-600">Explore property opportunities with an emphasis on informed choices, practical requirements and long-term considerations.</p>
+
+              <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                <li><span class="mr-2 font-bold text-brand-blue">✓</span>Property sourcing and advisory</li>
+                <li><span class="mr-2 font-bold text-brand-blue">✓</span>Residential and commercial opportunities</li>
+                <li><span class="mr-2 font-bold text-brand-blue">✓</span>Property investment guidance</li>
+                <li><span class="mr-2 font-bold text-brand-blue">✓</span>Real estate project support</li>
+              </ul>
+
+              <a href="#contact" class="mt-8 inline-flex items-center font-bold text-brand-blue hover:text-brand-green">Enquire about real estate <span class="ml-3">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section id="expertise" class="relative overflow-hidden bg-brand-navy py-24 text-white sm:py-28">
+      <div class="absolute -right-20 top-0 h-80 w-80 rounded-full bg-brand-cyan/15 blur-[100px]"></div>
+      <div class="absolute -bottom-20 left-0 h-72 w-72 rounded-full bg-brand-green/15 blur-[100px]"></div>
+
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-emerald-400">Our Approach</p>
+            <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+              Good solutions start with understanding.
+            </h2>
+            <p class="mt-6 max-w-xl leading-8 text-slate-300">
+              Every organisation and property requirement is different. Our approach starts with listening, clarifying priorities and considering the options before moving towards a practical solution.
+            </p>
+            <a href="#contact" class="mt-9 inline-flex rounded-full bg-white px-7 py-4 font-bold text-brand-navy transition hover:bg-emerald-300">
+              Tell Us What You Need <span class="ml-3">↗</span>
+            </a>
+          </div>
+
+          <div class="space-y-5">
+            <div class="flex gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 font-bold text-emerald-300">01</span>
+              <div><h3 class="text-lg font-bold">Understand</h3><p class="mt-2 text-sm leading-7 text-slate-300">Identify the challenge, goals, constraints and desired outcomes.</p></div>
+            </div>
+
+            <div class="flex gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-400/15 font-bold text-cyan-300">02</span>
+              <div><h3 class="text-lg font-bold">Evaluate</h3><p class="mt-2 text-sm leading-7 text-slate-300">Consider available options and develop a clear, considered direction.</p></div>
+            </div>
+
+            <div class="flex gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-400/15 font-bold text-blue-300">03</span>
+              <div><h3 class="text-lg font-bold">Move Forward</h3><p class="mt-2 text-sm leading-7 text-slate-300">Align next steps with your priorities and work towards measurable outcomes.</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VISUAL GALLERY -->
+    <section class="bg-white py-24 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-brand-green">Possibilities</p>
+            <h2 class="mt-5 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">Ideas into opportunities</h2>
+          </div>
+          <p class="max-w-lg leading-7 text-slate-600">From the way businesses operate to the places where people work and live, explore the possibilities of thoughtful solutions.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <a href="#consulting" class="group relative h-80 overflow-hidden rounded-3xl bg-slate-200">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85" alt="Business planning and strategy" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/15 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-7"><p class="text-xs font-bold uppercase tracking-widest text-emerald-300">Business</p><h3 class="mt-2 text-2xl font-bold text-white">Better ways to grow</h3><p class="mt-3 text-sm text-slate-200">Explore consulting ↗</p></div>
+          </a>
+
+          <a href="#technology" class="group relative h-80 overflow-hidden rounded-3xl bg-slate-200">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=85" alt="Team collaborating on technology and innovation" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/15 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-7"><p class="text-xs font-bold uppercase tracking-widest text-cyan-300">Technology</p><h3 class="mt-2 text-2xl font-bold text-white">Ideas into action</h3><p class="mt-3 text-sm text-slate-200">Explore IT services ↗</p></div>
+          </a>
+
+          <a href="#real-estate" class="group relative h-80 overflow-hidden rounded-3xl bg-slate-200">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85" alt="Contemporary residential real estate" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/15 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-7"><p class="text-xs font-bold uppercase tracking-widest text-blue-300">Real Estate</p><h3 class="mt-2 text-2xl font-bold text-white">Spaces for the future</h3><p class="mt-3 text-sm text-slate-200">Explore property ↗</p></div>
+          </a>
+        </div>
+
+        <p class="mt-5 text-xs leading-6 text-slate-400">Images are illustrative. Replace these with actual company projects, properties or case studies before presenting them as HWWGS work.</p>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="px-6 py-12 sm:py-16 lg:px-8">
+      <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-brand-blue px-7 py-14 sm:px-12 sm:py-16 lg:px-16">
+        <div class="absolute -right-12 -top-28 h-80 w-80 rounded-full border-[45px] border-white/5"></div>
+        <div class="absolute -bottom-28 right-1/3 h-64 w-64 rounded-full bg-brand-cyan/20 blur-[80px]"></div>
+        <div class="relative flex flex-col items-start justify-between gap-9 lg:flex-row lg:items-center">
+          <div class="max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-emerald-300">Your Next Step Starts Here</p>
+            <h2 class="mt-5 text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">Let's discuss what you're looking to achieve.</h2>
+            <p class="mt-5 leading-8 text-blue-100">Share your business challenge, technology needs or property requirements. Let's start with a conversation.</p>
+          </div>
+          <a href="#contact" class="inline-flex shrink-0 items-center rounded-full bg-white px-7 py-4 font-bold text-brand-blue transition hover:bg-emerald-300">Contact HWWGS <span class="ml-3">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-brand-light py-24 sm:py-28">
+      <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:px-8">
+
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-brand-green">Get In Touch</p>
+          <h2 class="mt-5 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">Have a project in mind?</h2>
+          <p class="mt-6 max-w-lg leading-8 text-slate-600">Tell us a little about what you need. Whether you are exploring a business challenge, a technology solution or a property opportunity, we welcome your enquiry.</p>
+
+          <div class="mt-10 space-y-6">
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-xl text-brand-blue shadow-sm">✉</div>
+              <div><h3 class="font-bold text-brand-navy">Email</h3><p class="mt-1 text-sm leading-6 text-slate-500">info@hwwgs.com</p></div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-xl text-brand-green shadow-sm">⌖</div>
+              <div><h3 class="font-bold text-brand-navy">Location</h3>Lagos, Abuja and Toronto<p class="mt-1 text-sm leading-6 text-slate-500"></p></div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-xl text-brand-cyan shadow-sm">◷</div>
+              <div><h3 class="font-bold text-brand-navy">Business enquiries</h3><p class="mt-1 text-sm leading-6 text-slate-500">Contact us about consulting, technology and real estate.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <form id="contact-form" class="rounded-3xl border border-slate-100 bg-white p-7 shadow-sm sm:p-9">
+          <h3 class="text-2xl font-extrabold text-brand-navy">Send an enquiry</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-500">Fill in the details below to prepare your message.</p>
+
+          <div class="mt-7 grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="name" class="mb-2 block text-sm font-semibold text-slate-700">Full name</label>
+              <input id="name" name="name" required autocomplete="name" class="w-full rounded-xl border border-slate-200 px-4 py-3.5 outline-none transition focus:border-brand-cyan focus:ring-4 focus:ring-cyan-50" placeholder="Your name">
+            </div>
+            <div>
+              <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">Email address</label>
+              <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-xl border border-slate-200 px-4 py-3.5 outline-none transition focus:border-brand-cyan focus:ring-4 focus:ring-cyan-50" placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <label for="service" class="mb-2 block text-sm font-semibold text-slate-700">What can we help with?</label>
+            <select id="service" name="service" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 outline-none transition focus:border-brand-cyan focus:ring-4 focus:ring-cyan-50">
+              <option value="">Choose a service</option>
+              <option>Management Consulting</option>
+              <option>Information Technology</option>
+              <option>Real Estate</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+
+          <div class="mt-5">
+            <label for="message" class="mb-2 block text-sm font-semibold text-slate-700">Your message</label>
+            <textarea id="message" name="message" required rows="5" class="w-full resize-y rounded-xl border border-slate-200 px-4 py-3.5 outline-none transition focus:border-brand-cyan focus:ring-4 focus:ring-cyan-50" placeholder="Tell us a little about your requirements..."></textarea>
+          </div>
+
+          <button type="submit" class="mt-6 w-full rounded-full bg-brand-blue px-6 py-4 font-bold text-white transition hover:bg-brand-green">Prepare My Enquiry ↗</button>
+          <p id="form-status" role="status" aria-live="polite" class="mt-4 text-sm leading-6 text-slate-600"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0A1427] text-slate-300">
+    <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="lg:col-span-2">
+          <a href="#home" class="inline-flex items-center gap-3">
+            <img src="logo.png" alt="HWWGS logo" class="h-16 w-24 rounded bg-white object-contain">
+            <span>
+              <span class="block font-heading text-xl font-extrabold text-white">HWWGS</span>
+              <span class="mt-1 block text-[10px] uppercase tracking-[.18em] text-slate-400">Worldwide Global Services</span>
+            </span>
+          </a>
+          <p class="mt-6 max-w-md text-sm leading-7 text-slate-400">Bringing together management consulting, information technology and real estate to support better decisions and new opportunities.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-white">Explore</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li><a href="#about" class="transition hover:text-emerald-300">About Us</a></li>
+            <li><a href="#services" class="transition hover:text-emerald-300">Our Services</a></li>
+            <li><a href="#expertise" class="transition hover:text-emerald-300">Our Approach</a></li>
+            <li><a href="#contact" class="transition hover:text-emerald-300">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-white">Our Services</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li><a href="#consulting" class="transition hover:text-emerald-300">Management Consulting</a></li>
+            <li><a href="#technology" class="transition hover:text-emerald-300">Information Technology</a></li>
+            <li><a href="#real-estate" class="transition hover:text-emerald-300">Real Estate</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-12 flex flex-col justify-between gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row">
+        <p>© <span id="year"></span> HWWGS. All rights reserved.</p>
+        <a href="#home" class="transition hover:text-white">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Keep JavaScript in its own file -->
+  <script src="script.js"></script>
+</body>
+</html>
